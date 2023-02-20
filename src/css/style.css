@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	width: 100%
+}
+
+#root {
+	display: flex;
+	width: 100%;
+	margin:auto;
+	flex-direction: column;
+	align-items: center;
+}
+.App {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.jogo {
+	margin: 30px;
+	padding: 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items:flex-start;
+	width: 1500px;
+
+}
+.jogo  img{
+	width: 400px;
+	height: 466.67px;
+}
+
+.jogo button {
+	width: 200px;
+	height: 60px;
+	border-radius: 8px;
+	background-color: #27AE60;
+	border: none;
+}
+.jogo .button {
+	color:white;
+	font-weight: 700;
+	text-align: center;
+	font-size: 20px;
+	line-height: 23px;
+}
+
+.letras {
+	width: 850px;
+	height: 120px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	align-items: center;
+	justify-content: center;
+	
+}
+.letras .botao-letras {
+	width: 40px;
+	height: 40px;
+	margin: 12px;
+	border: 1px solid #7AA7C7;
+	background-color: #9FAAB5;
+	border-radius: 3px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.letras .botao-letras span {
+	color: #798A9F;
+	font-weight: 700;
+	font-size: 16px;
+	text-align: center;
+	line-height: 19px;
+}
