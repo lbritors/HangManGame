@@ -47,6 +47,19 @@ body {
 	font-size: 20px;
 	line-height: 23px;
 }
+.jogo .palavra {
+	height: 400px;
+	display: flex;
+	width: 300px;
+	flex-direction: column;
+	justify-content: space-between;
+	
+}
+.jogo .escolhida {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
 
 .letras {
 	width: 850px;
@@ -56,23 +69,41 @@ body {
 	margin-top: 40px;
 	align-items: center;
 	justify-content: center;
-	
 }
 .letras .botao-letras {
 	width: 40px;
 	height: 40px;
 	margin: 12px;
-	border: 1px solid #7AA7C7;
-	background-color: #9FAAB5;
 	border-radius: 3px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 }
 
 .letras .botao-letras span {
-	color: #798A9F;
+	
 	font-weight: 700;
 	font-size: 16px;
 	text-align: center;
 	line-height: 19px;
+}
+
+.habilitado {
+	border: 1px solid #7AA7C7;
+	background-color:  #E1ECF4;
+	color: #39739D;
+}
+
+.desabilitado {
+	color: #798A9F;
+	border: 1px solid #7AA7C7;
+	background-color: #9FAAB5;
+}
+
+.palavra-escolhida {
+	bottom: 450px;
+	font-size: 32px;
+	display: flex;
+	flex-direction: row;
+	padding-right: 60px;
 }
