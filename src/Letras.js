@@ -1,16 +1,18 @@
 
 
-
-
-
-
 export default function Letras(props) {
-    const {disabled, alfabeto} = props;
-
+    const {alfabeto, habilitaLetra, setHabilitaLetra, habilitaTeclado, verificaLetra, letraHabilitada} = props;
+   
     return (
         <div className="letras">
-            {alfabeto.map(l => <button data-test="letter" key={l} className={`botao-letras ${disabled === true ? "desabilitado" : "habilitado"}`}><span className="letra">{l.toLocaleUpperCase()}</span></button>)
-            }
+            {alfabeto.map((letra) => <button  letra={letra} key={letra} disabled={habilitaTeclado} 
+            onClick={(event) => verificaLetra(event.target)} data-test="letter" 
+            className={`botao-letras ${habilitaTeclado === true ? "desabilitado" : "habilitado"}`}><span className="letra">
+                {letra.toLocaleUpperCase()}</span></button>)}
         </div>
-    );
+    )
+}
+
+function Letra(props) {
+   
 }

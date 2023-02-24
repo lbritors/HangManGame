@@ -3,16 +3,16 @@ import forca from "./assets/forca0.png"
 import palavras from "./palavras";
 
 export default function Jogo(props) {
-    const {disabled, setDisabled, selecionaPalavra, setPalavraEscolhida} = props;
+    const {habilitaTeclado, setHabilitaTeclado, selecionaPalavra, setPalavraEscolhida} = props;
     let {palavraEscolhida} = props
     function iniciaJogo() {
-        if(disabled === true) {
-            setDisabled(false);
-            palavraEscolhida = selecionaPalavra();
-            console.log(palavraEscolhida);
-            setPalavraEscolhida(palavraEscolhida);
+        palavraEscolhida = selecionaPalavra();
+        setPalavraEscolhida(palavraEscolhida);
+        console.log(palavraEscolhida);
+        if(habilitaTeclado === false) {
+            setHabilitaTeclado(true);
         } else {
-            setDisabled(true);
+            setHabilitaTeclado(false);
         }
     }
 
