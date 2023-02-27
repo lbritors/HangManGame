@@ -73,15 +73,15 @@ function App() {
       setPalavraUnderline(palavraEscolhida);
       setDisabled(true);
       setCor("red");
-      setLetraClicada([]);
       setErro(0);
+      setLetraClicada([]);
       setImagem(forcaArray[erro+1]);
-    }
+    } 
   }
 
   return (
     <div className="App">
-      <Jogo cor={cor} palavraRenderizada={palavraRenderizada} setPalavraRenderizada={setPalavraRenderizada} letraClicada={letraClicada} setDisabled={setDisabled} imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline} forcaArray={forcaArray}  habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida} alfabeto={alfabeto}/>
+      <Jogo  setCor={setCor} cor={cor} palavraRenderizada={palavraRenderizada} setPalavraRenderizada={setPalavraRenderizada} letraClicada={letraClicada} setDisabled={setDisabled} imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline} forcaArray={forcaArray}  habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida} alfabeto={alfabeto}/>
       <Letras  letraClicada={letraClicada} disabled={disabled} verificaLetra={verificaLetra} alfabeto={alfabeto} habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} habilitaLetra={habilitaLetra} setHabilitaLetra={setHabilitaLetra}/>
     </div>
   );

@@ -2,7 +2,7 @@
 import "./css/style.css"
 
 export default function Jogo(props) {
-    const {cor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled, erro} = props;
+    const {cor,setCor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled, erro} = props;
 
 
     let {palavraEscolhida} = props
@@ -12,6 +12,8 @@ export default function Jogo(props) {
         console.log(palavraEscolhida);
         setPalavraUnderline([palavraEscolhida.map(p => p="_ ")]);
         setDisabled(false); 
+        setCor("black");
+
     }
 
 
