@@ -1,7 +1,7 @@
 
 
 export default function Letras(props) {
-    const {alfabeto, habilitaTeclado, verificaLetra, disabled, letraClicada} = props;
+    const {alfabeto, verificaLetra, disabled, letraClicada} = props;
     
     return (
         <div className="letras">

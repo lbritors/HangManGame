@@ -2,7 +2,7 @@
 import "./css/style.css"
 
 export default function Jogo(props) {
-    const {cor,setCor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled, erro} = props;
+    const {cor,setCor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled} = props;
 
 
     let {palavraEscolhida} = props
@@ -24,7 +24,7 @@ export default function Jogo(props) {
             <div className="palavra">
                 <button onClick={iniciaJogo} data-test="choose-word" ><span className="button">Escolher palavra</span></button>
                 <div className="escolhida">
-                    <p className={`palavra-escolhida ${cor}`}> <span>{palavraUnderline}</span></p>
+                    <p className={`palavra-escolhida ${cor}`}> <span data-test="word">{palavraUnderline}</span></p>
                 </div>
             </div>
         </div>
