@@ -107,3 +107,6 @@ body {
 	flex-direction: row;
 	padding-right: 60px;
 }
+.red {
+	color:red;
+}

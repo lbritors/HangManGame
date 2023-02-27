@@ -1,8 +1,8 @@
 
-
+import "./css/style.css"
 
 export default function Jogo(props) {
-    const {imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled, letraClicada, palavraRenderizada, setPalavraRenderizada} = props;
+    const {cor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled, erro} = props;
 
 
     let {palavraEscolhida} = props
@@ -14,17 +14,6 @@ export default function Jogo(props) {
         setDisabled(false); 
     }
 
-    // function mostraLetra() {
-    //     const array = [palavraEscolhida.filter((p,i) => function(p,i){palavraUnderline[i]= p})];
-    //     for(let i = 0; i < palavraEscolhida; i++) {
-    //         if()
-    //     }
-    // }
-    
-    // mostraLetra();
-
-    
-
 
 
     return (
@@ -33,7 +22,7 @@ export default function Jogo(props) {
             <div className="palavra">
                 <button onClick={iniciaJogo} data-test="choose-word" ><span className="button">Escolher palavra</span></button>
                 <div className="escolhida">
-                    <p className="palavra-escolhida"><span>{palavraUnderline}</span></p>
+                    <p className={`palavra-escolhida ${cor}`}> <span>{palavraUnderline}</span></p>
                 </div>
             </div>
         </div>

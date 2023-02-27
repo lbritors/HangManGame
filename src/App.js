@@ -18,18 +18,19 @@ function App() {
   const [habilitaTeclado, setHabilitaTeclado] = useState(true);
   const [habilitaLetra, setHabilitaLetra] = useState(false);
   let [palavraEscolhida, setPalavraEscolhida] = useState([]);
-  const [palavraUnderline, setPalavraUnderline] = useState([]);
+  const [palavraUnderline, setPalavraUnderline] = useState("");
   const [palavraRenderizada, setPalavraRenderizada] = useState([]);
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const [letraClicada, setLetraClicada] = useState([]);
   let [erro, setErro] = useState(0);
   const [disabled, setDisabled] = useState(true);
   const [imagem, setImagem] = useState(forca);
+  const [cor, setCor] = useState("purple");
   const forcaArray = [forca, forca1, forca2, forca3, forca4, forca5, forca6];
+  let contador = erro +1;
 
   
   console.log("letraclicada" ,letraClicada);
-
 
   
   function sortear() {
@@ -55,21 +56,32 @@ function App() {
     }
   
     if(!(palavraEscolhida.includes(novaletraClicadaLower))) {
-      let contador = erro +1;
       setErro(contador);
       setImagem(forcaArray[erro+1]);
     } else if (palavraEscolhida.includes(novaletraClicadaLower)) {
-      for(let i = 0; i < palavraEscolhida.length; i ++) {
-        if(palavraEscolhida[i] === novaletraClicadaLower)
-          palavraUnderline.splice(i, 1, palavraEscolhida[i]);
+     
+       for(let i = 0; i < palavraEscolhida.length; i ++) {
+         if(palavraEscolhida[i] === novaletraClicadaLower)
+           palavraUnderline.slice(palavraUnderline[i] = palavraEscolhida[i]);
       }
     }
-    
+    fimDeJogo();
+  }
+
+  function fimDeJogo() {
+    if (contador === 6) {
+      setPalavraUnderline(palavraEscolhida);
+      setDisabled(true);
+      setCor("red");
+      setLetraClicada([]);
+      setErro(0);
+      setImagem(forcaArray[erro+1]);
+    }
   }
 
   return (
     <div className="App">
-      <Jogo palavraRenderizada={palavraRenderizada} setPalavraRenderizada={setPalavraRenderizada} letraClicada={letraClicada} setDisabled={setDisabled} imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline} forcaArray={forcaArray}  habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida} alfabeto={alfabeto}/>
+      <Jogo cor={cor} palavraRenderizada={palavraRenderizada} setPalavraRenderizada={setPalavraRenderizada} letraClicada={letraClicada} setDisabled={setDisabled} imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline} forcaArray={forcaArray}  habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida} alfabeto={alfabeto}/>
       <Letras  letraClicada={letraClicada} disabled={disabled} verificaLetra={verificaLetra} alfabeto={alfabeto} habilitaTeclado={habilitaTeclado} setHabilitaTeclado={setHabilitaTeclado} habilitaLetra={habilitaLetra} setHabilitaLetra={setHabilitaLetra}/>
     </div>
   );
