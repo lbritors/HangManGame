@@ -1,19 +1,20 @@
 
-import "./css/style.css"
 
 export default function Jogo(props) {
-    const {cor,setCor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setDisabled} = props;
-
+    const {forcaArray, setImagem, setLetraClicada, cor,setCor, imagem, selecionaPalavra, setPalavraEscolhida, palavraUnderline, setPalavraUnderline, setErro} = props
 
     let {palavraEscolhida} = props
+
     function iniciaJogo() {
         palavraEscolhida = selecionaPalavra();
         setPalavraEscolhida(palavraEscolhida);
         console.log(palavraEscolhida);
-        setPalavraUnderline([palavraEscolhida.map(p => p="_ ")]);
-        setDisabled(false); 
+        setPalavraUnderline(palavraEscolhida.map(p => p="_ "));
+        setLetraClicada([]); 
         setCor("black");
-
+        setErro(0);
+        setImagem(forcaArray[0]);
+        
     }
 
 
