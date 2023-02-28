@@ -20,7 +20,6 @@ function App() {
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const [letraClicada, setLetraClicada] = useState(alfabeto);
   let [erro, setErro] = useState(0);
-  const [disabled, setDisabled] = useState(true);
   const [imagem, setImagem] = useState(forca0);
   const [cor, setCor] = useState("purple");
   const [acerto, setAcerto] = useState([]);
@@ -96,8 +95,8 @@ function App() {
 
   return (
     <div className="App">
-      <Jogo fimDeJogo={fimDeJogo} erro={erro} forcaArray={forcaArray} setImagem={setImagem} setLetraClicada={setLetraClicada} setErro={setErro} setCor={setCor} cor={cor}  letraClicada={letraClicada} setDisabled={setDisabled} imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline}  sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida} alfabeto={alfabeto}/>
-      <Letras  letraClicada={letraClicada} disabled={disabled} verificaLetra={verificaLetra} alfabeto={alfabeto}/>
+      <Jogo   forcaArray={forcaArray} setImagem={setImagem} setLetraClicada={setLetraClicada} setErro={setErro} setCor={setCor} cor={cor}  imagem={imagem} setPalavraUnderline={setPalavraUnderline} palavraUnderline={palavraUnderline}  sortear={sortear}  selecionaPalavra={selecionaPalavra} palavraEscolhida={palavraEscolhida} setPalavraEscolhida={setPalavraEscolhida}/>
+      <Letras  letraClicada={letraClicada} verificaLetra={verificaLetra} alfabeto={alfabeto}/>
     </div>
   );
 }
